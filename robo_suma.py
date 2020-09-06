@@ -37,9 +37,9 @@ def insert_or_update_balance(df,account_name,date,amount):
     existing_balance_df=balances_df[(balances_df['account_name']==account_name) & (balances_df['date']==date)]
     if len(existing_balance_df)==0:
         balances_table.insert_from_df(df)
-    elif existing_balance_df['account_name']==:
-        
-        balances_table.update("amount="+str(amount),"")
+    #TODO
+    #elif existing_balance_df['account_name']==:
+    #     balances_table.update("amount="+str(amount),"")
         
     
 
