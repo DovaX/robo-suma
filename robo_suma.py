@@ -66,6 +66,22 @@ def refresh_balances():
     print(balances_text)
     
     label2.text.set(balances)  
+  
+    
+  
+def gui_add_expense():
+    
+    category=combo4.cb.get()
+    name=entry5.text.get()
+    date=entry6.text.get()
+    amount=float(entry7.text.get().replace(",","."))
+   
+    new_expenses_df=pd.DataFrame([[category,name,date,amount]],columns=["category","name","date","amount"])
+    expenses_table.insert_from_df(new_expenses_df)
+    
+    entry5.text.set("")
+    entry6.text.set("")
+    entry7.text.set("")
     
     
 
@@ -75,6 +91,7 @@ db1=dh.XlsxDB("RobosumaDB")
 db1.create_database()
 
 balances_table=dh.XlsxTable(db1,"balances",["id","account_name","date","amount"])
+expenses_table=dh.XlsxTable(db1,"expenses",["id","category","name","date","amount"])
 
 
 
@@ -112,4 +129,9 @@ label6=dg.Label(gui1.window,"Date:",6,2)
 entry6=dg.Entry(gui1.window,6,3)
 label7=dg.Label(gui1.window,"Amount:",7,2)
 entry7=dg.Entry(gui1.window,7,3)
+
+btn7=dg.Button(gui1.window,"Submit",gui_add_expense,7,4)
+
+
+
 gui1.build_gui()
