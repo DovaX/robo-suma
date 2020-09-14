@@ -145,7 +145,7 @@ label7=dg.Label(gui1.window,"Amount:",7,2)
 entry7=dg.Entry(gui1.window,7,3)
 
 btn7=dg.Button(gui1.window,"Add expense",gui_add_expense,7,4)
-btn8=dg.Button(gui1.window,"Add income",gui_add_expense,8,4)
+btn8=dg.Button(gui1.window,"Add income",gui_add_income,8,4)
 
 
 
