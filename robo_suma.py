@@ -100,4 +100,16 @@ btn1=dg.Button(gui1.window,"Submit",gui_add_balance,2,4)
 
 label2=dg.Label(gui1.window,"",3,1)
 
+
+label3=dg.Label(gui1.window,"Expenses:",3,2)
+
+label4=dg.Label(gui1.window,"Category:",4,2)
+categories=['falk','fryb','rest','fast','vbuy','vpos','buy','obl','call','ubyt','food','cest','benz','rekr','mam','lost','int','eroz','drnk','hair','pokr','kb','douc','heal','games','sport','kolo','osvc','repl']
+combo4=dg.Combobox(gui1.window,categories,4,3)
+label5=dg.Label(gui1.window,"Name:",5,2)
+entry5=dg.Entry(gui1.window,5,3)
+label6=dg.Label(gui1.window,"Date:",6,2)
+entry6=dg.Entry(gui1.window,6,3)
+label7=dg.Label(gui1.window,"Amount:",7,2)
+entry7=dg.Entry(gui1.window,7,3)
 gui1.build_gui()
