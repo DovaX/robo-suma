@@ -84,6 +84,21 @@ def gui_add_expense():
     entry7.text.set("")
     
     
+    
+def gui_add_income():
+    
+    category=combo4.cb.get()
+    name=entry5.text.get()
+    date=entry6.text.get()
+    amount=float(entry7.text.get().replace(",","."))
+   
+    new_incomes_df=pd.DataFrame([[category,name,date,amount]],columns=["category","name","date","amount"])
+    incomes_table.insert_from_df(new_incomes_df)
+    
+    entry5.text.set("")
+    entry6.text.set("")
+    entry7.text.set("")
+    
 
 import dbhydra.dbhydra.dbhydra_core as dh
 
@@ -92,6 +107,7 @@ db1.create_database()
 
 balances_table=dh.XlsxTable(db1,"balances",["id","account_name","date","amount"])
 expenses_table=dh.XlsxTable(db1,"expenses",["id","category","name","date","amount"])
+incomes_table=dh.XlsxTable(db1,"incomes",["id","category","name","date","amount"])
 
 
 
