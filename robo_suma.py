@@ -41,8 +41,6 @@ def insert_or_update_balance(df,account_name,date,amount):
     #elif existing_balance_df['account_name']==:
     #     balances_table.update("amount="+str(amount),"")
         
-    
-
 def gui_add_balance():
     account_name=combo1.cb.get()
     amount=float(entry1.text.get())
@@ -134,7 +132,7 @@ btn1=dg.Button(gui1.window,"Submit",gui_add_balance,2,4)
 label2=dg.Label(gui1.window,"",3,1)
 
 
-label3=dg.Label(gui1.window,"Expenses:",3,2)
+label3=dg.Label(gui1.window,"Income and expenses:",3,2)
 
 label4=dg.Label(gui1.window,"Category:",4,2)
 categories=['falk','fryb','rest','fast','vbuy','vpos','buy','obl','call','ubyt','food','cest','benz','rekr','mam','lost','int','eroz','drnk','hair','pokr','kb','douc','heal','games','sport','kolo','osvc','repl']
@@ -146,7 +144,8 @@ entry6=dg.Entry(gui1.window,6,3)
 label7=dg.Label(gui1.window,"Amount:",7,2)
 entry7=dg.Entry(gui1.window,7,3)
 
-btn7=dg.Button(gui1.window,"Submit",gui_add_expense,7,4)
+btn7=dg.Button(gui1.window,"Add expense",gui_add_expense,7,4)
+btn8=dg.Button(gui1.window,"Add income",gui_add_expense,8,4)
 
 
 
