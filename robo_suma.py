@@ -11,6 +11,16 @@ class Account:
         self.owner=owner
         self.balances={}
 
+
+class MoneySupply:
+    def __init__(self,name):
+        self.name=name
+        
+M1=MoneySupply()
+M2=MoneySupply()
+M3=MoneySupply()
+
+
 Item("buy","clothes","2020-04-09",350)
 
 FIO_Main=Account("FIO_Main","Dominik")
