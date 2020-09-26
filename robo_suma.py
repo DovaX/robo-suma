@@ -11,15 +11,18 @@ class Account:
         self.owner=owner
         self.balances={}
 
-
 class MoneySupply:
     def __init__(self,name):
         self.name=name
-        
+    
+class Lender():
+    def __init__(self,name,balance):
+        self.name=name
+        self.balance=balance
+
 M1=MoneySupply()
 M2=MoneySupply()
 M3=MoneySupply()
-
 
 Item("buy","clothes","2020-04-09",350)
 
