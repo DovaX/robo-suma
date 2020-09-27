@@ -24,6 +24,9 @@ M1=MoneySupply()
 M2=MoneySupply()
 M3=MoneySupply()
 
+lender=Lender("Friend1",200)
+
+
 Item("buy","clothes","2020-04-09",350)
 
 FIO_Main=Account("FIO_Main","Dominik")
