@@ -15,14 +15,14 @@ class MoneySupply:
     def __init__(self,name):
         self.name=name
     
-class Lender():
+class Lender:
     def __init__(self,name,balance):
         self.name=name
         self.balance=balance
 
-M1=MoneySupply()
-M2=MoneySupply()
-M3=MoneySupply()
+M1=MoneySupply("M1")
+M2=MoneySupply("M2")
+M3=MoneySupply("M3")
 
 lender=Lender("Friend1",200)
 
