@@ -25,8 +25,6 @@ M2=MoneySupply("M2")
 M3=MoneySupply("M3")
 
 lender=Lender("Friend1",200)
-
-
 Item("buy","clothes","2020-04-09",350)
 
 FIO_Main=Account("FIO_Main","Dominik")
@@ -47,6 +45,9 @@ list_of_items=[]
 import dogui.dogui_core as dg
 import datetime
 import pandas as pd
+
+def add_category():
+    pass
 
 def insert_or_update_balance(df,account_name,date,amount):
     balances_df=balances_table.select_to_df()
@@ -80,9 +81,7 @@ def refresh_balances():
     print(balances_text)
     
     label2.text.set(balances)  
-  
-    
-  
+
 def gui_add_expense():
     
     category=combo4.cb.get()
@@ -126,33 +125,16 @@ balances_table=dh.XlsxTable(db1,"balances",["id","account_name","date","amount"]
 expenses_table=dh.XlsxTable(db1,"expenses",["id","category","name","date","amount"])
 incomes_table=dh.XlsxTable(db1,"incomes",["id","category","name","date","amount"])
 
-
-
 gui1=dg.GUI("Robosuma")
-
-today=datetime.datetime.now().strftime("%Y-%m-%d")
-    
+today=datetime.datetime.now().strftime("%Y-%m-%d")    
 label3=dg.Label(gui1.window,"Datum",1,2)
 entry3=dg.Entry(gui1.window,1,3,today)
-
-
-
 combo1=dg.Combobox(gui1.window,account_names,2,1)
-
-
-
-
 label1=dg.Label(gui1.window,"Aktuální stav",2,2)
 entry1=dg.Entry(gui1.window,2,3)
-
-
 btn1=dg.Button(gui1.window,"Submit",gui_add_balance,2,4)
-
 label2=dg.Label(gui1.window,"",3,1)
-
-
 label3=dg.Label(gui1.window,"Income and expenses:",3,2)
-
 label4=dg.Label(gui1.window,"Category:",4,2)
 categories=['falk','fryb','rest','fast','vbuy','vpos','buy','obl','call','ubyt','food','cest','benz','rekr','mam','lost','int','eroz','drnk','hair','pokr','kb','douc','heal','games','sport','kolo','osvc','repl']
 combo4=dg.Combobox(gui1.window,categories,4,3)
@@ -162,13 +144,8 @@ label6=dg.Label(gui1.window,"Date:",6,2)
 entry6=dg.Entry(gui1.window,6,3)
 label7=dg.Label(gui1.window,"Amount:",7,2)
 entry7=dg.Entry(gui1.window,7,3)
-
 btn7=dg.Button(gui1.window,"Add expense",gui_add_expense,7,4)
 btn8=dg.Button(gui1.window,"Add income",gui_add_income,8,4)
-
-
-
-
 btn8=dg.Button(gui1.window,"Add account",gui_add_account,9,4)
 
 
