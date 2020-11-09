@@ -120,6 +120,9 @@ def gui_add_account():
 def gui_add_lender():
     pass
 
+def plot_net_worth():
+    pass
+
 import dbhydra.dbhydra.dbhydra_core as dh
 
 db1=dh.XlsxDB("RobosumaDB")
